@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="/BargainBasket/scripts/script.js"></script>
+    <title>Log In</title>
+  </head>
+  <style !important>
+
+    body {
+      min-height: 100vh;
+      background-image: url("Images/Vector.svg");
+      background-repeat: no-repeat;
+      background-size: 100rem 100rem;
+      background-position:center ;
+      overflow-x: hidden;
+    }
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+  </style>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const error = urlParams.get('error');
+  if (error === 'authFailed') {
+      document.getElementById('error-message').innerText = 'Incorrect username or password';
+  }
+</script>
+  <body>
+    <nav class="Logo">
+      <img
+        src="Images/bargain-basket-high-resolution-logo-color-on-transparent-background 2.png"
+        alt="Image"
+      />
+    </nav>
+    <div class="CreateAccount">
+      Get back to Saving Now !
+    </div>
+    <form class="form" id="LoginForm" action="/login" method="post">
+      <p class="title">Login</p>
+      <p class="message">Sign in to your account</p>
+      <label>
+          <input class="input" type="text" name="username" placeholder="" required>
+          <span>Username</span>
+      </label>
+      <label>
+          <input class="input" type="password" name="password" placeholder="" required>
+          <span>Password</span>
+      </label>
+      <p id="error-message" style="color: red;font-weight: bolder; font-family: Poppins;"></p>
+      <button class="submit" type="submit">Submit</button>
+      <p class="signin">Dont have an account <a href="SignUpPage.html" style="text-decoration: none;">Sign Up</a></p>
+  </form>
+  <br>
+  <br>
+  <br>
+  <h4 style="font-family: Poppins;display: flex; justify-content: center; align-items: flex-start;">
+    By creating an account or signing you agree to our</h4>
+  <h4 style="font-weight: bolder; font-family: Poppins; display: flex; justify-content: center; align-items: flex-start;">
+    Terms and Conditions</h4>
+  </body>
+</html>

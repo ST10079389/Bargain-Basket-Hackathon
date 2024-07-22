@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <script src="HistoryPage.js"></script>
+    <title>History</title>
+  </head>
+  <style !important>
+
+    .Savedgrocerylistsbanner {
+      position: relative;
+      top: 120px;
+      left: 10px;
+      background: transparent;
+    }
+
+    .Rectangle120 {
+      width: 344px;
+      height: 67px;
+      left: 0px;
+      top: 0px;
+      position: relative;
+      background: #c1dcdc;
+      border-radius: 25px;
+    }
+
+    .cutlery {
+      width: 43.2px;
+      height: 35px;
+      left: 18.4px;
+      top: -50px;
+      position: relative;
+    }
+
+    .SavedGroceryListS {
+      width: 375px;
+      height: 35px;
+      left: 21px;
+      top: -90px;
+      position: relative;
+      text-align: center;
+      color: black;
+      font-size: 23.42px;
+      font-family: Montserrat;
+      font-weight: 600;
+      word-wrap: break-word;
+
+    }
+
+    .Displaygrocerylists {
+      width: 700px;
+      height: auto;
+      top: 0px;
+      left: 474px;
+      position: relative;
+      border-radius: 25px;
+      background-color: #c1dcdc;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .grocery-list {
+      width: 700px;
+      height: 100px;
+      top: 200px;
+      left: 474px;
+      position: relative;
+      border-radius: 25px;
+      background-color: #c1dcdc;
+    }
+
+    .grocery-list-item {
+      padding: 10px;
+      border-bottom: 5px solid rgb(255, 255, 255);
+      margin-bottom: 0px;
+    }
+  </style>
+  <body style="padding-top: 0px; margin-top: 0px">
+    <section>
+      <!-- Header -->
+      <header class="header">
+        <a href="HomePage.html" class="logo">
+          <img
+            src="Images/bargain-basket-high-resolution-logo-color-on-transparent-background 2.png"
+            alt=""
+            width="300"
+            height="50"
+          />
+        </a>
+        <input type="checkbox" id="check" />
+
+        <label for="check" id="menu-bar">
+          <div class="fas fa-bars" id="menu-open"></div>
+          <div class="fas fa-times" id="menu-close"></div>
+        </label>
+
+        <nav class="navbar">
+          <a href="HomePage.html">Home </a>
+          <a href="/products">Products </a>
+          <a href="AboutUsPage.html">About </a>
+          <a href="ContactUs.html">Contact </a>
+        <a href="/Mylist">
+          <img
+          src="Images/basket.png"
+          height="50"
+          width="60"
+          alt=""
+        />
+      </a>
+          <a href="ProfilePage.html">
+            <img
+              src="Images/user.png"
+              height="40"
+              width="40"
+              alt=""
+          />
+        </a>
+        </nav>
+      </header>
+      <!-- Header -->
+
+      <!-- Display Grocery Banner and GroceryLists -->
+      <div>
+        <div class="Savedgrocerylistsbanner">
+          <div class="Rectangle120"></div>
+          <img class="cutlery" src="Images/cutlery.png" />
+          <div class="SavedGroceryListS">Saved Grocery Lists :</div>
+        </div>
+      </div>
+
+      <div>
+        <br />
+        <div class="Displaygrocerylists">
+          <!-- The content will be generated here using JavaScript -->
+          <br />
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <div class="footercontainer">
+      <section class="footer">
+        <a href="HomePage.html">
+          <img
+            src="Images/bargain-basket-high-resolution-logo-color-on-transparent-background 2.png"
+            alt=""
+            height="90"
+            width="500"
+          />
+        </a>
+
+        <hr width="100%" />
+
+        <h1 class="credit">C 2023 Bargain Basket-all rights reserved</h1>
+      </section>
+    </div>
+    <!-- footer -->
+  </body>
+</html>

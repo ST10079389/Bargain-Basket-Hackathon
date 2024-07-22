@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+    <title>Payment</title>
+</head>
+<style !important>
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    position: relative; 
+    background: url("Images/Vector.svg") center center no-repeat;
+    background-size:contain;
+}
+
+*, *:before, *:after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: istok-web, sans-serif;
+}
+
+.container{
+  background: #b8b3b3;
+  padding: 2em;
+  width: 33%;
+  min-width: 25em;
+  float: right;
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  margin-right: 1em;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    margin: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 120px; 
+
+}
+
+.footercontainer {
+    margin-top: auto;
+}
+
+.container .paymentInformation {
+    width: 100%; 
+}
+ul{
+  list-style-type: none;
+}
+
+h3, h4{
+  color: #000000;
+}
+h3{
+  text-transform: uppercase;
+  font-size: 1.4em;
+  line-height: 2em;
+}
+h4{
+  line-height: 3.5em;
+}
+
+li{
+  margin-bottom: .8em;
+  zoom: 1;
+}
+li:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input{
+  border: 1px solid #000000;
+  padding: .7em;
+  height: 3em;
+  width: 100%;
+}
+[type="checkbox"]{
+  width: auto;
+height: 100%;  
+}
+label{
+  float: left;
+  width: 90%;
+  font-size: .9em;
+  font-weight: bold;
+  color: #444;
+}
+
+select{
+  font-size: 0.6em;
+  width: 100%;
+  height: 4.1em;
+}
+
+.phoneBox{
+  width: 25%;
+  margin-right: 4.1666666666%;
+  margin-left: 4.1666666666%;
+  float: left;
+  position:relative;
+  padding: .8em 0;
+}
+.phoneBox:after{
+  content: "-";
+  position: absolute;
+  z-index: 1000;
+  right: -17%;
+  top: 33%;
+}
+.phoneBox:last-child:after{
+  content: "";
+  display: none;
+}
+.btn{
+  font-size: 1em;
+  font-weight: bold;
+  background: #0300cc;
+  border-radius: .25em;
+  color: #fff;
+  width: 50%;
+  min-width: 12em;
+  max-width: 16em;
+  margin: 1em auto;
+  display: block;
+  cursor: pointer;
+}
+
+.paymentInformation a{
+  text-decoration: none;
+}
+.paymentInformation a:hover{
+  color: #0300cc;
+}
+.subscriberAgreement a{
+  color: #0300cc;
+}
+/* -- the grid -- */
+[class*="col-span"]{
+  float: left;
+  padding: 0 .4em;   
+}
+
+.col-span-33{
+  width: 33%;
+}
+.col-span-50{
+  width: 50%;
+}
+.col-span-66{
+  width: 66%;
+}
+.col-span-100{
+  width: 100%;
+}
+
+
+
+/* -- Helper Classes -- */
+.thickGrayDblBorder{ /*Lame Name */
+  border: 8px solid #ccc;
+  outline: 1px solid #999;  
+}
+
+.smallPrint{ /* another lame name */
+  font-size: .6em;
+  color: #666;
+}
+.smallPrint p{
+  margin-bottom: 1.5em;
+}
+
+.grayBg{
+  background: #ccc;
+}
+
+.fauxTable {
+  display: table;
+  padding: .8em 1em .5em  1em;
+}
+
+.fauxTableCell.vertMiddle{
+   display: table-cell;
+   vertical-align: middle;
+}
+.fauxTableCell.horMiddle{
+  text-align: center;
+}
+
+.overRide-floatRight{
+  float: right !important;
+}
+
+.overRide-width85{
+  width: 85% !important;
+  
+}
+.overRide-width10{
+  width: 15% !important;
+}
+.overRide-noHeight{
+  height: auto !important;
+}
+
+.centerHor{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+<body>
+     <!-- Header -->
+  <header class="header">
+
+    <a href="HomePage.html" class="logo">
+        <img src="Images/bargain-basket-high-resolution-logo-color-on-transparent-background.png" alt="" width="300" height="50">
+    </a>
+    <input type="checkbox" id="check">
+
+    <label for="check" id="menu-bar">
+        <div class="fas fa-bars" id="menu-open"></div>
+        <div class="fas fa-times" id="menu-close"></div>
+    </label>
+    
+
+    <nav class="navbar">
+        <a href="HomePage.html">Home </a>
+        <a href="/products">Products </a>
+        <a href="AboutUsPage.html">About </a>
+        <a href="ContactUs.html">Contact </a>
+
+        <a href="/Mylist"> <img src="Images/basket.png" height=50 width="60" alt=""></a>
+        <a href="ProfilePage.html"> <img src="Images/user.png" height=40 width="40" alt=""></a>
+    </nav>
+</header>
+<!-- Header -->
+
+<!-- Payement -->
+<div class="container">
+
+    <section class="paymentInformation">
+      <h3>Payment Information</h3>
+      <ul>
+        
+        <li>
+          <div class="col-span-100">
+            <input type="text" id="nameOnCard" name="nameOnCard" placeholder="Name on Card" />
+          </div>
+        </li>
+        <li>
+          <div class="col-span-100">
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Credit Card #" />
+          </div>
+        </li>
+        
+        <li>
+          <div class="col-span-50">
+            <select class="thickGrayDblBorder" id="expMonth" name="expMonth">
+              <option value="-1">Expiration Month</option>
+            </select>
+          </div>
+          <div class="col-span-50">
+              <select class="thickGrayDblBorder"  id="expYear" name="expYear">
+                <option value="-1">Expiration Year</option>
+              </select>
+          </div>
+        </li>
+        <li>
+          <div class="col-span-50">
+            <input type="text" id="securityCode" name="securityCode" placeholder="Security Code" />
+          </div>
+          <div class="col-span-50">
+              <a href="#" class="smallPrint whatIsThis">What is this?</a>
+              <img src="https://s.cdpn.io/6209/cc_Icon.png" />
+          </div>
+        </li>
+        <p class="smallPrint col-span-100">
+          There are no refunds available, and BargainBasket is not responsible for any damages to products after being handed over.
+        </p>
+      </ul>
+    </section>
+    
+    <section class="deliveryAddress">
+      <h3>Delivery Address</h3>
+      <ul>
+        <li>
+          <div class="col-span-33">
+            <input type="text" id="shipHouseNumber" name="shipHouseNumber" placeholder="House #" /> 
+          </div>
+          <div class="col-span-66">
+            <input type="text" id="shipStreetName" name="shipStreetName" placeholder="Street Name" />
+          </div>
+        </li>
+        
+        <li>
+          <div class="col-span-100">
+           <input type="text" id="shipAddress2" name="shipAddress2" placeholder="Apt / Suite / Floor # (if applicable)" />
+          </div>
+          </li>
+        <li>
+          <div class="col-span-100">
+          <input type="text" id="shipCity" name="shipCity" placeholder="City" />
+          </div>
+          </li>
+        <li>
+          <div class="col-span-50">
+          <select class="thickGrayDblBorder" id="shipState" name="shipState">
+            <option value="-1">State</option>
+          </select>
+          </div>
+          <div class="col-span-50">
+          <input type="text" id="shipZip" name="shipZip" placeholder="Zipcode" />
+          </div>
+          </li>
+        <li class="smallPrint">
+          <div class="col-span-100">
+            Newspaper delivery is only available in South Africa<br/>Sales tax may apply.
+          </div>
+          </li>
+        
+          <li>
+            <div class="col-span-100 grayBg fauxTable">
+              <div class="fauxTableCell vertMiddle">
+                <label for="chkBillingDifferent">Billing Address is different than delivery address</label>
+                <input type="checkbox" name="chkBillingDifferent" id="chkBillingDifferent" value="1" />
+              </div>
+            </div>
+        </li>
+      </ul>
+    </section>
+    
+    <section class="billingAddress">
+      <h3>Billing Address</h3>
+      <ul>
+        <li>
+          <div class="col-span-33">
+          <input type="text" id="billHouseNumber" name="billHouseNumber" placeholder="House #" /> 
+          </div>
+          <div class="col-span-66">
+            <input type="text" id="streetName" name="streetName" placeholder="Street Name" />
+          </div>
+          </li>
+        <li>
+          <div class="col-span-100">
+            <input type="text" id="billAddress2" name="billAddress2" placeholder="Apt / Suite / Floor # (if applicable)" />
+          </div>
+        </li>
+        <li>
+          <div class="col-span-100">
+            <input type="text" id="billCity" name="billCity" placeholder="City" />
+          </div>
+        </li>
+        <li>
+          <div class="col-span-50">
+          <select id="billState" class="thickGrayDblBorder" name="billState">
+            <option value="-1">Province</option>
+          </select>
+          </div>
+          <div class="col-span-50">
+          <input type="text" id="billZip" name="billZip" placeholder="Zipcode" />
+          </div>
+          </li>
+      </ul>
+    </section>
+   
+    <section class="accountInformation">
+      <h3>Account Information</h3>
+      <div class="col-span-100 grayBg fauxTable">
+        <div class="fauxTableCell vertMiddle">
+        <input type="checkbox" id="chkHasAccount" name="chkHasAccount" value="1" />
+      <label for="chkHasAccount" class="overRide-floatRight">I already have a BargainBasket account</label>
+        </div>
+      </div>
+        <h4>Or Create A New Account</h4>
+      <ul>
+        <li>
+          <div class="col-span-50">
+          <input type="text" id="acctFirstName" name="acctFirstName" placeholder="First Name" />
+          </div>
+          <div class="col-span-50">
+          <input type="text" id="acctLastName" name="acctLastName" placeholder="Last Name" />
+          </div>
+        </li>
+        <li>
+          <div class="col-span-50">
+          <input type="text" id="acctEmail" name="acctEmail" placeholder="Email (this is your login)" />
+            </div>
+          <div class="col-span-50">
+          <input type="text" id="acctEmailConfirm" name="acctEmailConfirm" placeholder="Confirm Email" />
+            </div>
+        </li>
+        <li>
+          <div class="col-span-50">
+          <input type="password" id="acctPassword" name="acctPassword" placeholder="Password" />
+          </div>
+          <div class="col-span-50">
+          <input type="password" id="acctPasswordConfirm" name="acctPasswordConfirm" placeholder="Confirm Password" />
+        </div>
+        </li>
+        <li class="smallPrint">
+          <p class="col-span-100">Must be 5-15 characters long and include at least one number</p>
+          .</li>
+          <li>
+            <p class="col-span-100">Phone Number (for customer service)</p>
+            
+            </li>
+        <li>
+          <div class="col-span-100 grayBg">
+            
+            
+              <div class="phoneBox"><input type="type" step="1" id="acctPhoneAreaCode" name="acctAreaCode" placeholder="XXX" /></div> 
+              <div class="phoneBox"><input type="type" id="acctPhonePrefix" name="acctPhonePrefix" placeholder="XXX" /></div>  
+              <div class="phoneBox"><input type="type" id="acctPhoneSuffix" name="acctPhoneSuffix" placeholder="XXX" /></div> 
+              
+            
+          </div>
+          </li>
+        <li>
+          <div class="col-span-100">
+          <select class="thickGrayDblBorder">
+            <option value="-1">Select Security Question (for password recovery)</option>
+          </select>
+          </div>
+        </li>
+        <li>
+          <div class="col-span-100">
+          <input type="text" id="acctSecurityAnswer" name="acctSecurityAnswer" placeholder="Security Question Answer" />
+          </div>
+          </li>
+      </ul>
+    </section>
+    
+    <section class="emailUpdates">
+      <h3>Email Updates</h3>
+      <ul>
+        <li>
+          <div class="col-span-100">
+            <input class="overRide-noHeight" type="checkbox" id="chkReceiveUpdates" name="chkReceiveUpdates" value="1" checked="checked"/>
+            <label class="overRide-floatRight" for="chkReceiveUpdates">Receive updates and special offers from BargainBasket.</label>
+          </div>
+          </li>
+        <li>
+          <div class="col-span-100">
+          <input class="overRide-noHeight" type="checkbox" id="ckhReceiveOffers" name="ckhReceiveOffers" value="1" />
+          <label class="overRide-floatRight" for="ckhReceiveOffers">Receive latest news regarding BargainBasket.</label>
+          </div>
+          </li>
+      </ul>
+    </section>
+    
+    <section class="subscriberAgreement">
+      <h3>Subscriber Agreement</h3>
+      <ul>
+        <li>
+          <div class="col-span-100">
+          <input class="overRide-noHeight" type="checkbox" id="chkSubAgree" name="chkSubAgree" value="1" />
+          <label class="overRide-floatRight" for="chkSubAgree">You must read and agree to out <a href="#">Subscriber Agreement</a> and <a href="#">Privacy Policy</a></label>
+          </div>
+          </li>
+        <li>
+          <div class="col-span-100">
+            <input type="submit" class="btn" id="btnComplete" name="btnComplete" value="Complete Purchase »" />
+          </div>
+          </li>
+        <li>
+          <div class="col-span-100 smallPrint">
+          <p>*Introductory pricing is only available to households or customers at a business address who have not been subscribers to BargainBasket within the last 180 days. If you respond to this offer but do not qualify for introductory pricing, we reserve the right to reject your order or prorate your subscription term to reflect current subscriber pricing. This offer is only available in South Africa. and may be withdrawn at any time. Sales tax may apply.</p>
+          <p>Please note that your information will be saved unless deleted.</p>
+          <p>Our secure server software encrypts information to protect your transaction.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    
+  </div>
+<!-- Payement -->
+
+<!-- footer -->
+<div class="footercontainer">
+    <section class="footer">
+    
+      <a href="HomePage.html">
+          <img src="Images/bargain-basket-high-resolution-logo-color-on-transparent-background 2.png" alt="" height="90" width="500">
+      </a>
+      
+      <hr width="100%"/>
+    
+      <h1 class="credit">© 2023 Bargain Basket - All rights reserved</h1>
+    </section>
+</div>
+<!-- footer -->
+</body>
+<script>
+
+</script>
+</html>

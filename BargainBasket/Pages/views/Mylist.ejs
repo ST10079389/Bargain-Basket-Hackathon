@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap">
+    <script src="/BargainBasket/scripts/sendMail.js"></script>
+    <title>Grocery List</title>
+</head>
+<style !important>
+
+body {
+  min-height: 100vh;
+  background-image: url("Images/Vector.svg");
+  background-repeat: no-repeat;
+  background-size: 100rem 100rem;
+  background-position:center ;
+  overflow-x: hidden;
+}
+.footercontainer{
+    position: relative;
+    bottom: -100px
+}
+.master-container {
+  text-align: center;
+  padding: 0px;
+  box-shadow: 0px 3.375px 3.375px 0px rgba(0, 0, 0, 0.25);
+}
+
+.grocery-list {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0px 3.375px 3.375px 0px rgba(0, 0, 0, 0.25);
+}
+
+.grocery-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: #faf5ef;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.item-image {
+  width: 200px;
+  height: 200px;
+  margin-right: 40px;
+}
+
+.item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Nquantity-button {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  width: 67.271px;
+  height: 34.001px;
+  border-radius: 5.906px;
+  border: 0.844px solid rgba(0, 0, 0, 0.20);
+  box-shadow: 0px 3.375px 3.375px 0px rgba(0, 0, 0, 0.25);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Nquantity-button button{
+  width: 33%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.quantity {
+  width: 40px;
+  text-align: center;
+}
+
+.total-price-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.total-price-box {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.total-price-box p {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+#pay {
+  width: 80px;
+  position: relative;
+  top: -60px;
+  margin-left: 400px;
+  height: 34.001px;
+  color: #FFF;
+  border-radius: 5.906px;
+  background: #4939FF;
+  border: none;
+  box-shadow: 0px 3.375px 3.375px 0px rgba(0, 0, 0, 0.25);
+}
+
+#pay:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+@media screen and (max-width: 1280px) {
+  .total-price-container {
+    flex-direction: column;
+  }
+
+  #pay {
+    width: 100%;
+    max-width: 200px;
+    margin-left: 250px; 
+    top: 0;
+    margin-top: 1rem;
+  }
+
+  .checkout-btn {
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto; 
+    top: 0;
+    margin-top: 1rem;
+  }
+
+  .total-price-box {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .total-price-container {
+    flex-direction: column;
+  }
+
+  #pay {
+    width: 100%;
+    max-width: 200px;
+    margin-left: 200px; 
+    top: 0;
+    margin-top: 1rem;
+  }
+
+  .total-price-box {
+    margin-top: 0;
+  }
+}
+/* cart */
+.cart {
+  border-radius: 19px 19px 7px 7px;
+}
+
+.cart .products {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.cart .products .product {
+  display: grid;
+  grid-template-columns: 60px 1fr 80px 1fr;
+  gap: 10px;
+}
+
+.cart .products .product span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #47484b;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cart .products .product p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a7c81;
+}
+
+.cart .quantity {
+  height: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 7px;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+}
+
+.cart .quantity label {
+  width: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #47484b;
+}
+
+.cart .quantity button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  padding-bottom: 2px;
+}
+
+.card .small {
+  font-size: 15px;
+  margin: 0 0 auto auto;
+}
+
+.card .small sup {
+  font-size: px;
+}
+
+.input_field {
+  width: auto;
+  height: 36px;
+  padding: 0 0 0 12px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #e5e5e5;
+  filter: drop-shadow(0px 1px 0px #efefef)
+    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+/* Checkout */
+.checkout {
+  border-radius: 9px 9px 19px 19px;
+}
+
+.checkout .details {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 10px;
+  gap: 5px;
+}
+
+.checkout .details span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.checkout .details span:nth-child(odd) {
+  font-size: 11px;
+  font-weight: 700;
+  color: #707175;
+  margin: auto auto auto 0;
+}
+
+.checkout .details span:nth-child(even) {
+  font-size: 13px;
+  font-weight: 600;
+  color: #47484b;
+  margin: auto 0 auto auto;
+}
+
+.checkout .checkout--footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 10px 20px;
+  background-color: #efeff3;
+}
+
+.price {
+  position: relative;
+  font-size: 22px;
+  color: #2B2B2F;
+  font-weight: 900;
+}
+
+.price sup {
+  font-size: 13px;
+}
+
+.price sub {
+  width: fit-content;
+  position: absolute;
+  font-size: 11px;
+  color: #5F5D6B;
+  bottom: 5px;
+  display: inline-block;
+}
+
+.checkout-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+  width: 150px;
+  height: 36px;
+  background: #4939FF;
+  margin-right: 60px;
+  box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+  border-radius: 7px;
+  border: 0;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  cursor: pointer;
+}
+</style>
+<body>
+    <!-- Header -->
+  <header class="header">
+
+    <a href="HomePage.html" class="logo">
+        <img src="/Images/bargain-basket-high-resolution-logo-color-on-transparent-background.png" alt="" width="300" height="50">
+    </a>
+    <input type="checkbox" id="check">
+
+    <label for="check" id="menu-bar">
+        <div class="fas fa-bars" id="menu-open"></div>
+        <div class="fas fa-times" id="menu-close"></div>
+    </label>
+    
+
+    <nav class="navbar">
+        <a href="HomePage.html">Home </a>
+        <a href="/products">Products </a>
+        <a href="AboutUsPage.html">About </a>
+        <a href="ContactUs.html">Contact </a>
+
+        <a href="Mylist.html"> <img src="Images/basket.png" height=50 width="60" alt=""></a>
+        <a href="ProfilePage.html"> <img src="Images/user.png" height=40 width="40" alt=""></a>
+    </nav>
+</header>
+<!-- Header -->
+
+<!-- GROCERY LIST -->
+
+<div class="master-container" style="margin-top: 170px;">
+  <h1>Grocery List</h1>
+  <div class="grocery-list">
+    <% groceriesList.forEach(grocery => { %>
+      <div class="grocery-item">
+        <img src="<%= grocery.imageURL %>" alt="" class="item-image">
+        <div class="item-details">
+          <p><%= grocery.Name %></p>
+          <h3><%= grocery.Price %></h3>
+          <div class="Nquantity-button">
+            <button type="button" class="decrease">-</button>
+            <input class="quantity" name="productQuantity" value="1" min="1">
+            <button type="button" class="increase">+</button>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+  <div class="total-price-container">
+    <form action="/payments" method="post">
+      <div class="total-price-box">
+        <p>Total Savings: R<%= totalSavings.toFixed(2) %></p>
+        <p>Total Price: R<%= totalPrice.toFixed(2) %></p>
+      </div>
+      <button type="submit" id="pay">Checkout</button>
+    </form>
+    <button class="checkout-btn">Email my Grocery List</button>
+  </div>
+  
+</div>
+
+<!-- footer -->
+<div class="footercontainer">
+    <section class="footer">
+    
+      <a href="HomePage.html">
+          <img src="Images/bargain-basket-high-resolution-logo-color-on-transparent-background 2.png" alt="" height="90" width="500">
+      </a>
+      
+      <hr width="100%"/>
+    
+      <h1 class="credit">© 2023 Bargain Basket - All rights reserved</h1>
+    </section>
+</div>
+<!-- footer -->
+
+<script>
+  // Add a click event listener to the product-grid div to handle quantity changes
+  document.querySelectorAll(".Nquantity-button").forEach(function (quantityButton) {
+    const quantityInput = quantityButton.querySelector(".quantity");
+    
+    quantityButton.addEventListener("click", function (event) {
+      if (event.target.classList.contains("decrease")) {
+        let currentQuantity = parseInt(quantityInput.value, 10);
+        if (currentQuantity > 0) {
+          quantityInput.value = currentQuantity - 1;
+        }
+      } else if (event.target.classList.contains("increase")) {
+        let currentQuantity = parseInt(quantityInput.value, 10);
+        quantityInput.value = currentQuantity + 1;
+      }
+
+      let updatedQuantity = parseInt(quantityInput.value, 10);
+    });
+  });
+</script>
+</body>
+</html>

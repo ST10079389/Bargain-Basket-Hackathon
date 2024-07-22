@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="/BargainBasket/scripts/script.js"></script>
+  <title>Sign Up</title>
+  <style !important>
+
+    body {
+      min-height: 100vh;
+      background-image: url("Images/Vector.svg");
+      background-repeat: no-repeat;
+      background-size: 100rem 100rem;
+      background-position:center ;
+      overflow-x: hidden;
+    }
+    body {
+      margin: 0; /* Remove default margin to avoid overflow */
+      padding: 0; 
+      background-color: #F0F3FB;
+    }
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.CreateAccount{
+  text-align: center; color: black; font-size:44px; font-family: Poppins; font-weight: 700; line-height: 83.20px; word-wrap: break-word;
+  color: transparent;
+  /*https://media.giphy.com/media/3MkDCwlAT4BFW6AqH8/giphy.gif*/
+  background-image: url("https://media.giphy.com/media/3oEdv8UZ1tXKZ0fThu/giphy.gif");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; 
+  text-align: center; 
+  padding: 20px; 
+}
+  </style>
+</head>
+<body>
+  <nav class="Logo">
+    <img
+      src="Images/bargain-basket-high-resolution-logo-color-on-transparent-background 2.png"
+      alt="Image"
+    />
+  </nav>
+  <div class="CreateAccount" >
+    Create your account now !
+  </div>
+  <form class="form" id="registrationForm" action="/register" method="post">
+    <p class="title">Register</p>
+    <p class="message">Signup now and get ready to SAVE!</p>
+    <label>
+        <input class="input" type="email" name="email" placeholder="" required>
+        <span>Email</span>
+    </label>
+    <label>
+        <input class="input" type="text" name="username" placeholder="" required>
+        <span>Username</span>
+    </label>
+    <label>
+        <input class="input" type="password" name="password" placeholder="" required>
+        <span>Password</span>
+    </label>
+    <button class="submit" type="submit">Submit</button>
+    <p class="signin">Already have an account? <a href="LogInPage.html" style="text-decoration: none;">Sign In</a></p>
+</form>
+
+<br>
+<br>
+<br>
+<h4 style="font-family: Poppins;display: flex; justify-content: center; align-items: flex-start;">
+  By creating an account or signing you agree to our</h4>
+<h4 style="font-weight: bolder; font-family: Poppins; display: flex; justify-content: center; align-items: flex-start;">
+  Terms and Conditions</h4>
+</body>
+</html>
